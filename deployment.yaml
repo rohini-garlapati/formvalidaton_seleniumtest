@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: formvalidation-deployment
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: formvalidation
+  template:
+    metadata:
+      labels:
+        app: formvalidation
+    spec:
+      containers:
+        - name: formvalidation
+          image: rohinigarlapati/sample:kuberimg
+          ports:
+            - containerPort: 5000
