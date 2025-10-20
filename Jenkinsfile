@@ -24,7 +24,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 echo "Building Docker Image"
-                bat 'docker build -t formvalidation:v1 .'
+                bat 'docker build -t formvalidation:v8 .'
             }
         }
 
@@ -39,8 +39,8 @@ pipeline {
         stage('Push Docker Image to Docker Hub') {
             steps {
                 echo "Pushing Docker Image to Docker Hub"
-                bat 'docker tag formvalidation:v1 rohinigarlapati/sample:formvalidationimage'
-                bat 'docker push rohinigarlapati/sample:formvalidationimage'
+                bat 'docker tag formvalidation:v1 rohinigarlapati/sample:formvalidationimage:v8'
+                bat 'docker push rohinigarlapati/sample:formvalidationimage:v8'
             }
         }
 
